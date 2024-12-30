@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup Page</title>
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-image: url("images/pexels-lilartsy-1111597.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            color: #fff;
+        }
+
+        /* Center the form on the page */
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            backdrop-filter: blur(10px); /* Makes background blur */
+        }
+
+        /* Form Styling */
+        .signup-form {
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .signup-form h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 24px;
+            font-weight: 700;
+            color: #00c6ff;
+        }
+
+        .signup-form label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 14px;
+            color: #ccc;
+        }
+
+        .signup-form input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #555;
+            border-radius: 5px;
+            background-color: #222;
+            color: #fff;
+        }
+
+        .signup-form input:focus {
+            outline: none;
+            border-color: #00c6ff;
+        }
+
+        .signup-form button {
+            width: 100%;
+            padding: 10px;
+            background-color: #00c6ff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: 700;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .signup-form button:hover {
+            background-color: #009ace;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 480px) {
+            .signup-form {
+                padding: 20px;
+            }
+
+            .signup-form h1 {
+                font-size: 20px;
+            }
+        }
+    </style>
+    <script>
+        function check() {
+            const name = document.forms["signupForm"]["uname"].value.trim();
+            const psd = document.forms["signupForm"]["psd"].value.trim();
+            const cpsd = document.forms["signupForm"]["confirmpsd"].value.trim();
+
+            if (name === "" || psd === "" || cpsd === "") {
+                alert("All fields must be filled out.");
+                return false;
+            }
+
+            if (psd !== cpsd) {
+                alert("Passwords do not match.");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <form class="signup-form" action="signup" method="post" name="signupForm" onsubmit="return check()">
+            <h1>Register Here</h1>
+            <label for="uname">Username</label>
+            <input type="text" name="uname" id="uname" placeholder="Enter your username" aria-label="Username">
+
+            <label for="psd">Password</label>
+            <input type="password" name="psd" id="psd" placeholder="Enter your password" aria-label="Password">
+
+            <label for="confirmpsd">Confirm Password</label>
+            <input type="password" name="confirmpsd" id="confirmpsd" placeholder="Confirm your password" aria-label="Confirm Password">
+
+            <button type="submit">Register</button>
+        </form>
+    </div>
+</body>
+</html>

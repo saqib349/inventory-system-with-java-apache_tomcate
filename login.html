@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In - Inventory Store</title>
+    <script>
+        function gotosignup() {
+            window.location.href = "signup.html"; /* Redirects to the signup page */
+        }
+    </script>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+        }
+
+        /* Background Design */
+        .bodi {
+            background-image: url("images/pexels-pavel-danilyuk-6295825.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        /* Centered Content */
+        .container {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 30px 20px;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            max-width: 500px;
+            width: 100%;
+            color: #fff;
+        }
+
+        .container h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+            color: #00c6ff;
+        }
+
+        .container h2 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #ccc;
+        }
+
+        .container h3 {
+            font-size: 16px;
+            margin-bottom: 20px;
+            color: #999;
+        }
+
+        /* Form Styling */
+        .form-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 14px;
+            color: #ccc;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #555;
+            border-radius: 5px;
+            background-color: #222;
+            color: #fff;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #00c6ff;
+        }
+
+        /* Button Styles */
+        .form-buttons {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
+        .form-buttons input {
+            width: 48%;
+            padding: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .form-buttons input[type="submit"] {
+            background-color: #00c6ff;
+            color: #fff;
+        }
+
+        .form-buttons input[type="submit"]:hover {
+            background-color: #009ace;
+        }
+
+        .form-buttons input[type="button"] {
+            background-color: #555;
+            color: #fff;
+        }
+
+        .form-buttons input[type="button"]:hover {
+            background-color: #444;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 480px) {
+            .container {
+                padding: 20px 10px;
+            }
+
+            .form-buttons input {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="bodi">
+        <div class="container">
+            <h1>Welcome to Our Inventory Store</h1>
+            <h2>You can borrow any gym-related items here</h2>
+            <h3>Please sign in first</h3>
+
+            <form action="login" method="post">
+                <!-- Username -->
+                <div class="form-group">
+                    <label for="uname">User Name</label>
+                    <input type="text" name="uname" id="uname" placeholder="Enter your username" required>
+                </div>
+
+                <!-- Password -->
+                <div class="form-group">
+                    <label for="psd">Password</label>
+                    <input type="password" name="psd" id="psd" placeholder="Enter your password" required>
+                </div>
+
+                <!-- Buttons -->
+                <div class="form-buttons">
+                    <input type="submit" name="login" id="login" value="Login">
+                    <input type="button" name="signup" id="signup" value="Signup" onclick="gotosignup()">
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

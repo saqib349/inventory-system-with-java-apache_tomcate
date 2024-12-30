@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Product</title>
+    <style>
+        /* Body Styling */
+        body {
+            background-image: url("images/others.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            font-family: Arial, sans-serif;
+            color: #fff;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Container Styling */
+        .container {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 30px;
+            border-radius: 10px;
+            width: 400px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+            text-align: center;
+        }
+
+        /* Heading Styling */
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #00c6ff;
+        }
+
+        /* Table and Form Styling */
+        table {
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        table tr td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        /* Input Fields Styling */
+        input[type="text"], input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        /* Button Styling */
+        input[type="submit"] {
+            background-color: #00c6ff;
+            color: #fff;
+            font-size: 16px;
+            font-weight: bold;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            width: 100%;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #009ace;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Add or Update Product</h1>
+        <p>Here you can add a product with its name, price, and quantity.</p>
+        <form action="add" method="get">
+            <table>
+                <!-- Product Name -->
+                <tr>
+                    <td><label for="pname">Product Name:</label></td>
+                    <td><input type="text" name="pname" id="pname" placeholder="Enter product name" required></td>
+                </tr>
+
+                <!-- Quantity -->
+                <tr>
+                    <td><label for="quantity">Quantity:</label></td>
+                    <td><input type="number" name="quantity" id="quantity" placeholder="Enter quantity" min="1" required></td>
+                </tr>
+
+                <!-- Price -->
+                <tr>
+                    <td><label for="price">Price:</label></td>
+                    <td><input type="number" name="price" id="price" placeholder="Enter price" step="0.01" required></td>
+                </tr>
+
+                <!-- Submit Button -->
+                <tr>
+                    <td colspan="2">
+                        <input type="submit" name="add" id="add" value="Add/Update Product">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>
